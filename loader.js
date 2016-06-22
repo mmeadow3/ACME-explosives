@@ -62,16 +62,21 @@ firstXHR()
         	// console.log(type.id) //////getting ID in console
         	// console.log(type.name)//////getting name in console
         	// console.log(type.description)
+        	typeDropdown(types)
         return thirdXHR(data2);
     })
     .then(function(data3) {
-        // products = data3;
+        products = data3;
         // for (var type in products){  ////////For-In loop is working to get values
         // 	var product = products[id]
         // 	console.log(product.id)
+        dropProduct(products)
+        return data3;
     })
-
+//////////////////Define dropdown menu/////////////////
  var dropCategories = $('#dropDown1');
+ var dropType = $('#dropDown2');
+ var dropProduct = $('#dropDown3');
  // console.log("categories", categories);
 
 function firstDropdown (data1){
@@ -82,19 +87,39 @@ function firstDropdown (data1){
 	        text: catagory.name
 	    }).appendTo(dropCategories);   //////// appends to Categories drop down list/////////
 })
-}
-
-
-
-
-
-
-
-
-
-
-
+} ////////end first dropdown addition to DOM///////////////////////
+function typeDropdown (data2){
+	data2.forEach(function(type) {
+	    $('<option />', {
+	        value: type.id,
+	        text: type.name,
+	        description: type.description
+	    }).appendTo(dropType);   //////// appends to Categories drop down list/////////
 })
+}
+////////////////////////Ends Type function///////////////////////
+//////////////////////products drop down will be different, it will need to display data on select////////// 
+
+
+
+
+
+
+
+
+
+
+
+
+}) /////////END Starting Function/////////////
+
+
+
+
+
+
+
+
 
 
 
