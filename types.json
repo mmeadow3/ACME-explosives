@@ -5,6 +5,12 @@
             "category": 0,
             "name": "personal",
             "description": "Fireworks intended for recreational use during holiday celebrations"
+        },
+          {
+            "id": 1,
+            "category": 1,
+            "name": "industrial",
+            "description": "Serious explosions, not for recreational usage"
         }
     ]
 }
