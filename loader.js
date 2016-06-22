@@ -14,11 +14,11 @@ var getCategories = function() {
     })
 };
 ///////////////Second type of AJAX request//////////////
-var getTypes = function(result_of_firstXHR) {
+var getTypes = function(getCategories) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "types.json",
-      data: result_of_firstXHR
+      data: getCategories
     }).done(function(data) {
       resolve(data);
     }).fail(function(xhr, status, error) {
@@ -27,12 +27,12 @@ var getTypes = function(result_of_firstXHR) {
   })
 };
 
-// This function does one thing, and returns a promise
-var getProducts = function(result_of_secondXHR) {
+/////////// This function does one thing, and returns a promise//////////
+var getProducts = function(getTypes) {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: "prodcuts.json",
-      data: result_of_secondXHR
+      url: "products.json",
+      data: getTypes
     }).done(function(data) {
       resolve(data);
     }).fail(function(xhr, status, error) {
@@ -40,3 +40,18 @@ var getProducts = function(result_of_secondXHR) {
     });
   })
 };
+getCategories()
+  .then(function(data1) {
+    return getTypes(data1);
+  })
+  .then(function(data2) {
+    return getProducts(data2);
+  }).then(function(data3){
+    console.log(data3);  /////// Logs out an Object//////////
+  });
+
+
+
+
+
+
