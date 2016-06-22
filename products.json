@@ -1,10 +1,17 @@
 {
-    "products": [{
-        "fairy_sparklers": {
+    "products": [
+    	{
+        	"fairy_sparklers": {
             "id": 0,
             "type": 0,
             "name": "Fairy Sparklers",
             "description": "Multi-colored sparklers that are safe for any age."
+        },
+       		"Straight-Up dynamite": {
+            "id": 1,
+            "type": 1,
+            "name": "Straight-Up dynamite",
+            "description": "sparklers that are NOT safe for any age."
         }
     }]
 }
