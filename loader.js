@@ -43,23 +43,25 @@ $(document).ready(function() {
     };
 
 
+
 firstXHR()
-  .then(function(data1) {
-    categories = data1;
-    console.log("cat", data1);
-    return secondXHR(data1);
-})
-  .then(function(data2) {
-    types = data2;
-    console.log("type", data2);
-    return thirdXHR(data2);
-})
-  .then(function(data3) {
-    products = data3;
-    console.log("products", data3);
-})
-
-
+    .then(function(data1) {
+        categories = data1;
+        for (var id in categories){  ////////For-In loop is working to get values
+        	var value = categories[id]
+        	console.log(value.id) //////getting ID in console
+        	console.log(value.name)//////getting name in console
+        }
+        // console.log("cat", categories);
+        return secondXHR(data1);
+    })
+    .then(function(data2) {
+        types = data2;
+        return thirdXHR(data2);
+    })
+    .then(function(data3) {
+        products = data3;
+    })
 
 
 
