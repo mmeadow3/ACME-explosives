@@ -8,7 +8,7 @@
         },
           {
             "id": 1,
-            "category": 1,
+            "category": 0,
             "name": "industrial",
             "description": "Serious explosions, not for recreational usage"
         }
