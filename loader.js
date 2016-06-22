@@ -40,6 +40,12 @@ var getProducts = function(getTypes) {
     });
   })
 };
+/////////////Now we use those Promises to describe the order of execution, 
+ //////// and how data flows between each one.
+
+/////////////Note how the resolve callback function, itself, returns another 
+/////////// promise. This is how you can chain promises, and dictate the
+//////////// order of execution of multiple aynschronous operations.
 getCategories()
   .then(function(data1) {
     return getTypes(data1);
