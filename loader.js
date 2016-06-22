@@ -47,23 +47,42 @@ $(document).ready(function() {
 firstXHR()
     .then(function(data1) {
         categories = data1;
-        for (var id in categories){  ////////For-In loop is working to get values
-        	var value = categories[id]
-        	console.log(value.id) //////getting ID in console
-        	console.log(value.name)//////getting name in console
-        }
-        // console.log("cat", categories);
+        // for (var id in categories){  ////////For-In loop is working to get values
+        // 	var value = categories[id]}
+        	// console.log(value.id) //////getting ID in console
+        	// console.log(value.name)//////getting name in console
+        	///////make a function to be named outside of THIS FUNCTION/////////
+       	firstDropdown(categories)
         return secondXHR(data1);
     })
     .then(function(data2) {
         types = data2;
+         // for (var id in types){  ////////For-In loop is working to get values
+        	// var type = types[id]
+        	// console.log(type.id) //////getting ID in console
+        	// console.log(type.name)//////getting name in console
+        	// console.log(type.description)
         return thirdXHR(data2);
     })
     .then(function(data3) {
-        products = data3;
+        // products = data3;
+        // for (var type in products){  ////////For-In loop is working to get values
+        // 	var product = products[id]
+        // 	console.log(product.id)
     })
 
+ var dropCategories = $('#dropDown1');
+ // console.log("categories", categories);
 
+function firstDropdown (data1){
+	// console.log("d1", data1);
+	data1.forEach(function(catagory) {
+	    $('<option />', {
+	        value: catagory.id,
+	        text: catagory.name
+	    }).appendTo(dropCategories);   //////// appends to Categories drop down list/////////
+})
+}
 
 
 
